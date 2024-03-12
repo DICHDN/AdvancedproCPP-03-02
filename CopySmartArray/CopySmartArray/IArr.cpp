@@ -2,13 +2,21 @@
 #include "IArr.h"
 
 
-int smart_array::get_element(int arr)
+int smart_array::get_element(unsigned int arr)
 {
-    return array1[arr];
+    if (arr < actual_size)
+    {
+        return array1[arr];
+    }
+    else
+    {
+        std::cout << "Индекс вне диапазона массива";
+        return false;
+    }
 }
 
 
-int* smart_array::add_element(int new_element)
+int* smart_array::add_element(unsigned int new_element)
 {
     if (index < actual_size)
     {
